@@ -11,42 +11,92 @@
   <header class="nav">
     <div class="logo">OVERLOOK</div>
     <nav>
-      <a href="#work">Work</a>
+      <a href="#work">Gallaries</a>
+      <a href="#gear">Gear</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Capturing what’s often overlooked.</h1>
-    <p>Nature • Light • Quiet moments in East Tennessee</p>
-    <a href="#work" class="btn">View Work</a>
+    <h1>Capturing what’s often <span style="color: #916b53">overlooked</span>.</h1>
+    <p>A personal repository for my nature photography.</p>
+    <a href="#work" class="btn">View Scenes</a>
   </section>
 
   <section id="work" class="gallery">
     <div class="grid">
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-    </div>
+
+        <div class="photo-card" onclick="openLightbox(this)">
+            <img src="/media/website-testing.jpg" alt="Forest Fog">
+
+            <div class="exif-bar">
+            f/2.8 · 1/500 · Kodak Ektar 100 · Minolta Maxxum 5Xi · Sigma 75–200mm
+            </div>
+        </div>
+
+        <div class="photo-card" onclick="openLightbox(this)">
+            <img src="/media/website-testing.jpg" alt="Mountain Ridge">
+
+            <div class="exif-bar">
+            f/4 · 1/1000 · Canon EOS M2 · 75–300mm
+            </div>
+        </div>
+
+        </div>
   </section>
 
   <section id="about" class="about">
     <h2>About</h2>
     <p>
-      Overlook Photography focuses on the subtle, often ignored corners of the natural world—fog, ridgelines, waterlight, and quiet motion.
+        insert about statement here
     </p>
   </section>
 
+  <section id="gear" class="gear">
+    <h2>Gear</h2>
+    <p class="meta">The tools behind the perspective</p>
+
+    <div class="gear-grid">
+
+        <div class="gear-card">
+        <h3>Film Body</h3>
+        <p>Minolta Maxxum 5Xi</p>
+        </div>
+
+        <div class="gear-card">
+        <h3>Digital Body</h3>
+        <p>Canon EOS M2</p>
+        </div>
+
+        <div class="gear-card">
+        <h3>Telephoto Lens</h3>
+        <p>Sigma 75–200mm</p>
+        </div>
+
+        <div class="gear-card">
+        <h3>Film</h3>
+        <p>Kodak Ektar 100</p>
+        </div>
+
+    </div>
+    </section>
+
   <section id="contact" class="contact">
     <h2>Contact</h2>
-    <p>let’s build something: <a href="mailto:you@email.com">you@email.com</a></p>
+    <p>let’s create something: <a href="mailto:gqshanahan42@gmail.com">gqshanahan42@gmail.com</a></p>
   </section>
 
   <footer>
     <p>© 2026 Overlook Photography Co.</p>
   </footer>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img">
+    <div id="lightbox-exif"></div>
+  </div>
+
+  <script src="/js/script.js"></script>
 
 </body>
 </html>
