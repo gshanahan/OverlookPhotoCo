@@ -127,6 +127,23 @@ body {
   background-repeat: no-repeat;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(11, 13, 12, 1),
+        rgba(11, 13, 12, 0.7),
+        rgba(11, 13, 12, 0)
+      ),
+      url("/media/OlderPics/BeePeaking.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
 .hero h1 {
   font-size: 3rem;
   max-width: 650px;
@@ -374,6 +391,25 @@ a:hover {
 }
 
 .close-btn:hover {
+  border-color: var(--hover);
+  color: var(--hover);
+}
+
+.show-more-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#show-more-btn {
+  background: transparent;
+  border: 1px solid #2a332f;
+  color: var(--body);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#show-more-btn:hover {
   border-color: var(--hover);
   color: var(--hover);
 }

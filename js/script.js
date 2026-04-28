@@ -5,6 +5,10 @@ let currentIndex = 0;
 let currentPhotos = [];
 new Image().src = currentPhotos[currentIndex + 1]?.src;
 
+//for gallary display limit
+let visibleCount = 20;
+const increment = 20;
+
 //UPDATE THIS TO ADD IMAGES TO GALLARY
 const photos = [
   {
@@ -55,6 +59,7 @@ let currentFilter = "all";
 
 function setFilter(filter) {
   currentFilter = filter;
+  visibleCount = 20; // reset pagination
   renderGallery();
 }
 
@@ -67,12 +72,14 @@ function renderGallery() {
     return photo.tags.includes(currentFilter);
   });
 
-  currentPhotos.forEach((photo, index) => {
+  const visiblePhotos = currentPhotos.slice(0, visibleCount);
+
+  visiblePhotos.forEach((photo, index) => {
     const card = document.createElement("div");
     card.className = "photo-card";
 
     card.innerHTML = `
-      <img src="${photo.src}" alt="${photo.title}">
+      <img src="${photo.src}" alt="${photo.title}" loading="lazy">
       <div class="exif-bar">${photo.exif}</div>
     `;
 
@@ -80,6 +87,19 @@ function renderGallery() {
 
     gallery.appendChild(card);
   });
+
+  // Show/hide button
+  const btn = document.getElementById("show-more-btn");
+  if (visibleCount >= currentPhotos.length) {
+    btn.style.display = "none";
+  } else {
+    btn.style.display = "inline-block";
+  }
+}
+
+function showMore() {
+  visibleCount += increment;
+  renderGallery();
 }
 
 function openLightbox(index) {
