@@ -104,6 +104,42 @@ body {
   color: var(--hover);
 }
 
+/* existing nav stays mostly the same */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* hamburger hidden on desktop */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    flex-direction: column;
+    background: rgba(11, 13, 12, 0.95);
+    border: 1px solid #1b241f;
+    padding: 15px;
+    display: none; /* hidden by default */
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
 /* HERO */
 .hero {
   height: 100vh;
