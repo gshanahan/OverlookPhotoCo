@@ -11,7 +11,7 @@
   <header class="nav">
     <div class="logo">OVERLOOK</div>
     <nav>
-      <a href="#work">Gallaries</a>
+      <a href="#work">Gallary</a>
       <a href="#gear">Gear</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -19,66 +19,62 @@
   </header>
 
   <section class="hero">
-    <h1>Capturing what’s often <span style="color: #916b53">overlooked</span>.</h1>
+    <h1>Capturing what’s often <span style="color: #8b6d3d">overlooked</span>.</h1>
     <p>A personal repository for my nature photography.</p>
-    <a href="#work" class="btn">View Scenes</a>
+    <a href="#work" class="btn">View Gallary</a>
   </section>
 
   <section id="work" class="gallery">
-    <div class="grid">
 
-        <div class="photo-card" onclick="openLightbox(this)">
-            <img src="/media/website-testing.jpg" alt="Forest Fog">
+    <div class="filters">
+      <button onclick="setFilter('all')">All</button>
+      <button onclick="setFilter('film')">Film</button>
+      <button onclick="setFilter('digital')">Digital</button>
+      <button onclick="setFilter('landscape')">Landscape</button>
+      <button onclick="setFilter('macro')">Macro</button>
+      <button onclick="setFilter('animals')">Animals</button>
+    </div>
 
-            <div class="exif-bar">
-            f/2.8 · 1/500 · Kodak Ektar 100 · Minolta Maxxum 5Xi · Sigma 75–200mm
-            </div>
-        </div>
+    <div id="gallery" class="grid"></div>
 
-        <div class="photo-card" onclick="openLightbox(this)">
-            <img src="/media/website-testing.jpg" alt="Mountain Ridge">
-
-            <div class="exif-bar">
-            f/4 · 1/1000 · Canon EOS M2 · 75–300mm
-            </div>
-        </div>
-
-        </div>
   </section>
 
   <section id="about" class="about">
-    <h2 style="color: #916b53">About</h2>
+    <div class="section-title">
+      <span class="line"></span>
+      <h2 style="color: #8b6d3d">About</h2>
+      <span class="line"></span>
+    </div>
     <p>
-        My name is <span style="color: #916b53">Gabriel Shanahan</span> and I'm an amature nature photographer living in East Tennessee.
+        My name is <span style="color: #8b6d3d">Gabriel Shanahan</span> and I'm an amature nature photographer living in East Tennessee.
         My preferred medium is 35mm film because it helps me focus more on the process, and less on the outcome (You also can't beat the grain and personality of good film stock).
         I'm not on social media, but wanted a centralized repository to share my pictures and document my thoughts. 
         Hopefully some can find enjoyment in the work, and suggest new areas for me to explore. 
     </p>
     <p>
-      The idea behind <span style="color: #916b53">Overlook Photography</span> is to document things we often overlook during our day-to-day lives, 
+      The idea behind <span style="color: #8b6d3d">Overlook Photography</span> is to document things we often overlook during our day-to-day lives, 
       continue to grow as an amature nature photographer, and document my process along the way.
     </p>
   </section>
 
   <section id="gear" class="gear">
-    <h2 style="color: #916b53">Gear</h2>
+    <div class="section-title">
+      <span class="line"></span>
+      <h2 style="color: #8b6d3d">Gear</h2>
+      <span class="line"></span>
+    </div>
     <p class="meta">What I bring with me:</p>
 
     <div class="gear-grid">
 
         <div class="gear-card">
         <h3>Film Body</h3>
-        <p>Minolta Maxxum 5Xi</p>
+        <p>Minolta Maxxum 5Xi (bought from McKay's)</p>
         </div>
 
         <div class="gear-card">
-        <h3>Digital Body</h3>
-        <p>Canon EOS M2</p>
-        </div>
-
-        <div class="gear-card">
-        <h3>Telephoto Lens</h3>
-        <p>Sigma 75–200mm</p>
+        <h3>Lens</h3>
+        <p>Sigma 75–200mm Telephoto (bought with the camera)</p>
         </div>
 
         <div class="gear-card">
@@ -86,21 +82,40 @@
         <p>Kodak Ektar 100</p>
         </div>
 
+        <div class="gear-card">
+        <h3>Lab</h3>
+        <p>f/32 Photo (Knoxville, TN)</p>
+        </div>
+
     </div>
     </section>
 
   <section id="contact" class="contact">
-    <h2 style="color: #916b53">Contact</h2>
-    <p>let’s create something together: <a href="mailto:gqshanahan42@gmail.com">gqshanahan42@gmail.com</a></p>
+  <div class="section-title">
+    <span class="line"></span>
+    <h2 style="color: #8b6d3d">Contact</h2>
+    <span class="line"></span>
+  </div>
+  <p>let’s create something together: <a href="mailto:gqshanahan42@gmail.com">gqshanahan42@gmail.com</a></p>
   </section>
 
   <footer>
     <p>© 2026 Overlook Photography Co.</p>
   </footer>
 
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <img id="lightbox-img">
-    <div id="lightbox-exif"></div>
+  <div id="lightbox" class="lightbox">
+
+    <button class="close-btn" onclick="closeLightbox()">✕</button>
+
+    <button class="nav-arrow left" onclick="prevImage()">❮</button>
+
+    <div class="lightbox-content">
+      <img id="lightbox-img">
+      <div id="lightbox-exif"></div>
+    </div>
+
+    <button class="nav-arrow right" onclick="nextImage()">❯</button>
+
   </div>
 
   <script src="js/script.js"></script>
